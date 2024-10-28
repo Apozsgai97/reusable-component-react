@@ -1,15 +1,19 @@
+type CardProps = {
+  title: string;
+  description: string;
+  imageSrc: string;
+  actions?: React.ReactNode;
+};
 
-
-
-export function Card() {
+export function Card(props: CardProps) {
   return (
-   <>
-   <article className="card">
-   <img src="" alt="" className="card__image"/>
-   <h3 className="card__title"></h3>
-   <p className="card__description"></p>
-   <div className="card__actions"></div>
-   </article>
-   </>
-  )
+    <>
+      <article className="card">
+        <img src={props.imageSrc} alt={props.title} className="card__image" />
+        <h3 className="card__title">{props.title}</h3>
+        <p className="card__description">{props.description}</p>
+        <div className="card__actions"></div>
+      </article>
+    </>
+  );
 }
